@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+    <p><%= notice %></p>
+    <h1>Topic一覧</h1>
+    <%= link_to "Topicを作成する", new_topic_path %>
+    <% @topics.each do |topic| %>
+    <div class="row">
+      <%= link_to topic_path(topic) do %>
+      <h4><strong><%= topic.title %></strong></h4>
+      <% end %>
+      <%= profile_img(topic.user) %>
+
+      <p>本文:<%= topic.content %></p>
+      <%= link_to "Topicを編集する", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
+      <%= link_to "Topicを削除する", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
