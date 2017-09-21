@@ -3,6 +3,7 @@
 <head>
   <title>Exam33</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -11,32 +12,120 @@
 <body>
   <header>
     <ul>
-      <li><%= link_to "Achieve", root_path %></li>
-      <li><%= link_to "トップページ", root_path %></li>
-      <li><%= link_to "Topic", topics_path %></li>
-      <li><%= link_to 'ユーザー一覧', users_path if user_signed_in? %></li>
-        <li><%= link_to "メッセージ", conversations_path %></li>
-      
+      <div id="menu">
 
 
+          <li>
+            <div>
+               <span>
+                <%= link_to root_path, :method => :get do %>
+                <i class="fa fa-facebook-square fa-2x"></i>
+                <% end %>
+                </i>
+                </span>
+                <p class="arrow_box">HOME</p>
+             </div>
+           </li>
+
+
+          <li>
+            <div>
+              <span>
+              <%= link_to topics_path, :method => :get do %>
+              <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i>
+              <% end %>
+              </span>
+              <p class="arrow_box">Topic 一覧</p>
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <span>
+               <%= link_to conversations_path, :method => :get do %>
+                <i class="fa fa-comments fa-2x" aria-hidden="true"></i>
+                <% end %>
+              </span>
+              <p class="arrow_box">メッセージ</p>
+            </div>
+          </li>
 
       <% if user_signed_in? %>
-        <li><%= link_to 'マイページ', edit_user_registration_path %></li>
+
+          <li>
+            <div>
+              <span>
+                <%= link_to users_path, :method => :get do %>
+                <i class="fa fa-users fa-2x" aria-hidden="true"></i>
+                <% end %>
+              </span>
+              <p class="arrow_box">他のユーザー</p>
+            </div>
+          </li>
+
+          <li>
+            <div>
+              <span>
+                <%= link_to destroy_user_session_path, :method => :delete do %>
+                <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+                <% end %>
+              </span>
+              <p class="arrow_box">ログアウト</p>
+            </div>
+          </li>
 
 
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+         <li>
+            <div>
+              <span>
+                 <%= link_to edit_user_registration_path, :method => :get do %>
+                <i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                <% end %>              </span>
+              <p class="arrow_box">プロフィール</p>
+            </div>
+          </li>
+
+
+
+
       <% else %>
-      
-        <li><%= link_to 'ログイン', new_user_session_path %></li>
 
 
 
+          <li>
+            <div>
+              <span>
+            <%= link_to new_user_session_path, :method => :get do %>
+            <i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
+            <% end %>
+              </span>
+              <p class="arrow_box">ログイン</p>
+            </div>
+          </li>
 
-        <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+
+          <li>
+            <div>
+              <span>
+            <%= link_to new_user_registration_path, :method => :get do %>
+            <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
+            <% end %>
+              </span>
+              <p class="arrow_box">サインアップ</p>
+            </div>
+          </li>
+
+
+
       <% end %>
+
+
+
+
+
+</div>
+
     </ul>
-
-
   </header>
 
     <%= yield %>

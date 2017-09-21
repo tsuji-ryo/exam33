@@ -1,3 +1,8 @@
+<div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3" id="message_text">
+
+
 <% if @over_ten %>
   <%= link_to '以前のメッセージ', '?m=all' %>
 <% end %>
@@ -6,16 +11,25 @@
   <% @messages.each do |message| %>
     <% if message.body %>
       <% user = User.find(message.user_id) %>
-      <div class="item">
-        <div class="content">
-          <div class="header"><strong><%= user.name %></strong> <%= message.message_time %></div>
-          <div class="list">
+        <div class="message-margin">
+
             <div class="item">
+              <div class="content">
+                                  <div class="photo-2">
+                  <%= profile_img(message.user) %>
+                  </div>
+                <div class="header"><strong><%= user.name %></strong> <%= message.message_time %></div>
+                <div class="list">
+
+
+            <div class="item-2">
               <i class="right triangle icon"></i>
               <%= message.body %>
             </div>
+
           </div>
         </div>
+      </div>
       </div>
     <% end %>
   <% end %>
@@ -31,3 +45,6 @@
   </div>
 
 <% end %>
+</div>
+</div>
+</div>

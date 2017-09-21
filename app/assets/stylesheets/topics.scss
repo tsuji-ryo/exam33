@@ -15,3 +15,68 @@ input[type="submit"].btn-block{
 .container{
   padding-bottom: 85px;
 }
+
+@font-face {
+    font-family: 'ほのか明朝';
+    src: url('glyphicons-halflings-regular.tt') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.tweets {
+    border-bottom: 1px solid #ccc;
+    padding: 0px 10px 10px 10px;
+    text-align: left;
+    word-wrap: break-word;
+    background: #fff;
+}
+
+.DashboardProfile {
+  width: 100px;
+}
+
+.Dashbord-content {
+  padding: 5px;
+
+}
+
+
+
+#tweet_text {
+    position: relative; z-index: 1;
+    background: linear-gradient(#1da1f2,#fff 50%);
+    margin-bottom: 10px;
+}
+
+
+
+.message-margin{
+  border-bottom: 1px solid #ccc;
+}
+#tweet_new {
+  margin:20px;
+  background: linear-gradient(#1da1f2,#fff 50%)
+}
+
+.photo {
+  padding-left:5px;
+  padding-top:10px;
+  width:40px;
+  float:left;
+}
+.topic-content {
+  padding-top:20px;
+  padding-left: 5px;
+  clear: both;
+}
+.clear-box {
+  padding: 5px;
+  clear: both;
+  padding-top: 10px;
+}
+.content-name {
+  vertical-align: top;
+  float: left;
+  padding-left: 10px;
+}
+
