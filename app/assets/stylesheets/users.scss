@@ -1,3 +1,51 @@
+.email-box {
+  text-align: left;
+  padding: 20px 0px 0px 10px;
+  clear: both;
+}
+
+.content-name-2 {
+    vertical-align: top;
+    float: left;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.users-row {
+  background-color:white;
+  min-width: 200px;
+  min-height: 200px;
+  margin-top: 5px;
+}
+
+.photo-users {
+  padding-left:10px;
+  padding-top:10px;
+  width:50px;
+  float:left;
+}
+
+.item-users {
+  padding:10px;
+  padding-bottom: 20px;
+  text-align: left;
+}
+
+
+.li {
+list-style-type:none;
+}
+.user-name {
+    text-align: left;
+
+}
+
+.myself {
+  padding:10px;
+  padding-top: 20px;
+    text-align: left;
+
+}
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
