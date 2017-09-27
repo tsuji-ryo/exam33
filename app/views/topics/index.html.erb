@@ -33,12 +33,18 @@
               <% @topics.each do |topic| %>
                 <div class=tweets>
                     <div class="photo">
-                  <%= profile_img(topic.user) %>
+                      <div class="photo-size">
+                       <%= profile_img(topic.user) %>
+                      </div>
                   </div>
                   <div class="content-name">
                     <%= link_to topic_path(topic) do %>
                     <h4><%= topic.user.name %><% end %>さん</h4>
                   </div>
+
+                <div class="images">
+                  <td><%= image_tag topic.image.to_s %></td>
+                </div>
 
                   <div class="topic-content">
                  <p><%= topic.content %></p>

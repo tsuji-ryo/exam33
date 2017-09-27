@@ -16,9 +16,15 @@
   <%= f.label :title %>
   <%= f.text_field :title,class: 'form-control' %>
   <br>
+
   <%= f.label :content %>
   <%= f.text_area :content, class: 'form-control input-mysize',:placeholder => "今なにしてる？" %>
   <br>
+
+  <%= f.label :image %>
+  <%= f.text_field :image,:placeholder => "Image URL" %>
+  <br>
+
   <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
 <% end %>
 
