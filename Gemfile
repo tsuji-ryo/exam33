@@ -58,9 +58,7 @@ group :development, :test do
   gem 'better_errors'
 end
 
-group :development do
-  gem 'dotenv-rails'
-end
+
 gem 'faker-japanese'
 
 
@@ -82,5 +80,6 @@ group :development, :test do
   gem 'capistrano-rbenv'
   gem 'capistrano3-unicorn'
 end
+
 
 
