@@ -61,6 +61,7 @@ end
 group :development do
   gem 'dotenv-rails'
 end
+gem 'faker-japanese'
 
 
 gem 'omniauth'
@@ -68,5 +69,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
 

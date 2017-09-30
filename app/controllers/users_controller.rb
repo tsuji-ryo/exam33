@@ -10,4 +10,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(current_user.id)
+  end
+
+    def update
+    @user = User.find(current_user.id)
+    @user.update(users_params)
+  
+  end
+
 end

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
 
 
-
   get 'relationships/create'
 
   get 'relationships/destroy'
@@ -23,17 +22,16 @@ end
     resources :messages
   end
   resources :relationships, only: [:create, :destroy]
-  resources :topics, only: [:index, :new, :create, :edit, :update, :destroy, :show] do collection do
+  resources :topics, only: [:index, :new, :create, :edit, :update, :destroy, :show, :complete] do collection do
     post :confirm
     end
   end
   resources :topic do
     resources :comments
-    post :confirm, on: :collection
   end
 
 
 
 
-  root 'top#index'
+  root 'topics#index'
 end

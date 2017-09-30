@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:edit, :update, :destroy, :show]
 
   def index
-    @topics = Topic.all
+    @topics = Topic.all.order("id DESC")
     @topic = Topic.new
   end
 
@@ -37,10 +37,16 @@ class TopicsController < ApplicationController
   def update
     # edit, update, destroyで共通コード
     if @topic.update(topics_params)
-      redirect_to topics_path, notice: "ブログを更新しました！"
+        @user.image_url.retrieve_from_cache! params[:cache][:image_url]
+        @user.save!      redirect_to topics_path, notice: "ブログを更新しました！"
     else
       render 'edit'
     end
+  end
+
+  def complete
+    @topic.image.retrieve_from_cache! params[:cache][:image]
+    @topic.save!
   end
 
   def destroy
@@ -50,6 +56,8 @@ class TopicsController < ApplicationController
 
   def confirm
     @topic = Topic.new(topics_params)
+    @user = User.find(current_user.id)
+
     render:new if @topic.invalid?
   end
 
