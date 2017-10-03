@@ -1,2 +1,52 @@
-<h1>Messages#create</h1>
-<p>Find me in app/views/messages/create.html.erb</p>
+メッセージを入力してください
+
+<div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3" id="message_text">
+
+
+<% if @over_ten %>
+  <%= link_to '以前のメッセージ', '?m=all' %>
+<% end %>
+
+<div class="ui segment">
+  <% @messages.each do |message| %>
+    <% if message.body %>
+      <% user = User.find(message.user_id) %>
+        <div class="message-margin">
+
+            <div class="item">
+              <div class="content">
+                                  <div class="photo-2">
+                  <%= profile_img(message.user) %>
+                  </div>
+                <div class="header"><strong><%= user.name %></strong> <%= message.message_time if message.created_at.present? %></div>
+                <div class="list">
+
+
+            <div class="item-2">
+              <i class="right triangle icon"></i>
+              <%= message.body %>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
+  <div class="field">
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+    <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+  <div class="submit-btn">
+    <%= f.submit "メッセージを送る" %>
+  </div>
+
+<% end %>
+</div>
+</div>
+</div>

@@ -80,5 +80,5 @@ group :development, :test do
   gem 'capistrano3-unicorn'
 end
 
-
+gem "rails-i18n"
 

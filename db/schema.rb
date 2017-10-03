@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(version: 20170928030151) do
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
-  create_table "pictures", force: :cascade do |t|
-    t.string   "name"
-    t.text     "text"
-    t.text     "image"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"

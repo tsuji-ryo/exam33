@@ -37,8 +37,7 @@ class TopicsController < ApplicationController
   def update
     # edit, update, destroyで共通コード
     if @topic.update(topics_params)
-        @user.image_url.retrieve_from_cache! params[:cache][:image_url]
-        @user.save!      redirect_to topics_path, notice: "ブログを更新しました！"
+      redirect_to topics_path, notice: "ブログを更新しました！"
     else
       render 'edit'
     end

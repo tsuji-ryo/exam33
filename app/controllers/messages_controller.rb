@@ -26,6 +26,11 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @messages = @conversation.messages
+    if @messages.length > 10
+      @over_ten = true
+      @messages = @messages[-10..-1]
+    end
     @message = @conversation.messages.build(message_params)
     if @message.save
       redirect_to conversation_messages_path(@conversation)
