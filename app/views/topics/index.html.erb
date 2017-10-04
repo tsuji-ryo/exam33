@@ -50,10 +50,14 @@
                   <div class="topic-content">
                  <p><%= topic.content %></p>
                  </div>
-                 <div class="clear-box">
-                  <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
-                  <%= link_to "削除", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
-                  </div>
+
+                 <% if current_user.present? && current_user.id == topic.user.id %>
+                   <div class="clear-box">
+                    <%= link_to "編集", edit_topic_path(topic.id), class: 'btn btn-default btn-sm btn-success' %>
+                    <%= link_to "削除", topic_path(topic.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+                    </div>
+                  <% end %>
+
                 </div>
               <% end %>
               <p></p>
