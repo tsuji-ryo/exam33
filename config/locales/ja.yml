@@ -210,3 +210,10 @@ ja:
       topic:
         image: 画像
         content: 内容
+
+
+ja:
+  activerecord:
+    attributes:
+      message:
+        body: メッセージ
